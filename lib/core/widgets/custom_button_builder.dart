@@ -7,21 +7,23 @@ class CustomButtonBuilder extends StatelessWidget {
   const CustomButtonBuilder({
     Key? key,
     required this.title,
-    required this.onTap,
+    this.onTap,
     this.textColor = AppColor.white,
     this.backgroundColor = AppColor.bBlue,
   }) : super(key: key);
 
   final String title;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Color textColor;
   final Color backgroundColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        onTap();
-      },
+      onTap: onTap != null
+          ? () {
+              onTap!();
+            }
+          : null,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 12.0),
