@@ -1,5 +1,5 @@
 class ItemModel {
-  final String id;
+  final String? id;
   final String title;
   final String description;
   final double price;

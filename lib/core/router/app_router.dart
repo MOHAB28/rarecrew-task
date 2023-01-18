@@ -29,7 +29,12 @@ class AppRouter {
       case AppRouterNames.homeRouteName:
         return MaterialPageRoute(builder: (_) => const HomeView());
       case AppRouterNames.addRouteName:
-        return MaterialPageRoute(builder: (_) => const AddEditItemView());
+        String? productId = settings.arguments as String?;
+        return MaterialPageRoute(
+          builder: (_) => AddEditItemView(
+            itemId: productId,
+          ),
+        );
       case AppRouterNames.profileRouteName:
         return CupertinoPageRoute(builder: (_) => const ProfileView());
       default:

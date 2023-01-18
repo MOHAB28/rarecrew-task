@@ -28,6 +28,10 @@ class HomeViewmodel with ChangeNotifier {
 
   List<ItemModel> get items => [..._items];
 
+  ItemModel findItemById(String id) {
+    return _items.firstWhere((element) => element.id == id);
+  }
+
   void addItem(ItemInput item) {
     ItemModel newItem = ItemModel(
       id: DateTime.now().toString(),
