@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/errors/http_exception.dart';
 import '../../core/router/app_router.dart';
+import '../../core/styles/app_colors.dart';
 import '../../core/widgets/custom_alert_dialog.dart';
 import '../../core/widgets/custom_button_builder.dart';
 import '../../core/widgets/custom_question_text_button.dart';
@@ -10,18 +11,36 @@ import '../../core/widgets/custom_text_builder.dart';
 import '../../core/widgets/custom_text_form_field.dart';
 import 'auth_viewmodel.dart';
 
-class AuthScreen extends ConsumerWidget {
-  AuthScreen({super.key});
+class AuthScreen extends ConsumerStatefulWidget {
+  const AuthScreen({
+    super.key,
+  });
 
+  /// The default form type to use.
+  @override
+  ConsumerState<AuthScreen> createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends ConsumerState<AuthScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final authNotifire = ref.watch(authViewmodel);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: AppColor.grey,
+        elevation: 0.0,
+      ),
       body: Stack(
         children: [
           Form(
@@ -71,28 +90,19 @@ class AuthScreen extends ConsumerWidget {
                         if (_formKey.currentState!.validate()) {
                           try {
                             authNotifire.isLogin
-                                ? await authNotifire
-                                    .login(
-                                      _emailController.text.trim(),
-                                      _passwordController.text.trim(),
-                                    )
-                                    .then(
-                                      (_) => Navigator.pushReplacementNamed(
-                                        context,
-                                        AppRouterNames.layoutRouteName,
-                                      ),
-                                    )
-                                : await authNotifire
-                                    .signup(
-                                      _emailController.text.trim(),
-                                      _passwordController.text.trim(),
-                                    )
-                                    .then(
-                                      (_) => Navigator.pushReplacementNamed(
-                                        context,
-                                        AppRouterNames.layoutRouteName,
-                                      ),
-                                    );
+                                ? await authNotifire.login(
+                                    _emailController.text.trim(),
+                                    _passwordController.text.trim(),
+                                  )
+                                : await authNotifire.signup(
+                                    _emailController.text.trim(),
+                                    _passwordController.text.trim(),
+                                  );
+                            if (!mounted) return;
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRouterNames.homeRouteName,
+                            );
                           } on HttpException catch (error) {
                             String errorMessage = _authError(error.toString());
                             _showErrorDialog(context, errorMessage);

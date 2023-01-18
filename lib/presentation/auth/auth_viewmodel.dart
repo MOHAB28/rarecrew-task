@@ -72,4 +72,4 @@ class AuthViewmodel with ChangeNotifier {
 }
 
 final authViewmodel =
-    ChangeNotifierProvider<AuthViewmodel>((ref) => AuthViewmodel());
+    ChangeNotifierProvider.autoDispose<AuthViewmodel>((ref) => AuthViewmodel());

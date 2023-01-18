@@ -6,14 +6,15 @@ import 'app_colors.dart';
 ThemeData appTheme() {
   return ThemeData(
     fontFamily: 'Lato',
+    primaryColor: AppColor.bBlue,
     scaffoldBackgroundColor: AppColor.grey,
     appBarTheme: const AppBarTheme(
-      elevation: 0.0,
-      backgroundColor: AppColor.grey,
+      elevation: 4.0,
+      backgroundColor: AppColor.bBlue,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ),
-      iconTheme: IconThemeData(color: AppColor.black)
+      iconTheme: IconThemeData(color: AppColor.white),
     ),
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: const TextStyle(
