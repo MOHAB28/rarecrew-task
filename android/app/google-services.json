@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252186819268",
+    "project_id": "rarecrew-3e3e1",
+    "storage_bucket": "rarecrew-3e3e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252186819268:android:5430bf8c3b1953a1512791",
+        "android_client_info": {
+          "package_name": "com.mohabbb.task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252186819268-358a5039hno2ds5h6rc54j9a58qgggq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnA2UdE26_TNpbN4pauMI9NObUWByVp74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252186819268-358a5039hno2ds5h6rc54j9a58qgggq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
