@@ -22,12 +22,16 @@ class AuthView extends ConsumerStatefulWidget {
 }
 
 class _AuthScreenState extends ConsumerState<AuthView> {
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
+    _phoneController.dispose();
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -57,6 +61,20 @@ class _AuthScreenState extends ConsumerState<AuthView> {
                       fontWeight: FontWeight.w700,
                     ),
                     const SizedBox(height: 20.0),
+                    if (!authNotifire.isLogin)
+                      CustomTextFormField(
+                        keyboardType: TextInputType.text,
+                        controller: _nameController,
+                        hintText: 'Enter your name',
+                        title: 'Name',
+                        validator: (value) {
+                          if (value!.isEmpty || value.length < 5) {
+                            return 'Enter a valid name';
+                          }
+                          return null;
+                        },
+                      ),
+                    const SizedBox(height: 20.0),
                     CustomTextFormField(
                       keyboardType: TextInputType.emailAddress,
                       controller: _emailController,
@@ -85,6 +103,20 @@ class _AuthScreenState extends ConsumerState<AuthView> {
                       },
                     ),
                     const SizedBox(height: 20.0),
+                    if (!authNotifire.isLogin)
+                      CustomTextFormField(
+                        keyboardType: TextInputType.phone,
+                        controller: _phoneController,
+                        hintText: 'Enter your phone',
+                        title: 'Phone',
+                        validator: (value) {
+                          if (value!.isEmpty || value.length < 11) {
+                            return 'Enter a valid phone';
+                          }
+                          return null;
+                        },
+                      ),
+                    const SizedBox(height: 20.0),
                     CustomButtonBuilder(
                       onTap: () async {
                         if (_formKey.currentState!.validate()) {
@@ -97,6 +129,8 @@ class _AuthScreenState extends ConsumerState<AuthView> {
                                 : await authNotifire.signup(
                                     _emailController.text.trim(),
                                     _passwordController.text.trim(),
+                                    _nameController.text.trim(),
+                                    _phoneController.text.trim(),
                                   );
                             if (!mounted) return;
                             Navigator.pushReplacementNamed(
