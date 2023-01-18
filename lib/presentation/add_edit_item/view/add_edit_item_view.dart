@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/widgets/custom_text_form_field.dart';
-import '../home/home_viewmodel.dart';
-import '../home/model.dart';
+import '../../../core/widgets/custom_text_form_field.dart';
+import '../../home/viewmodel/home_viewmodel.dart';
+import '../../home/model/model.dart';
 
 class AddEditItemView extends ConsumerStatefulWidget {
   const AddEditItemView({

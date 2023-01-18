@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/widgets/custom_text_form_field.dart';
-import '../auth/auth_viewmodel.dart';
+import '../../../core/widgets/custom_text_form_field.dart';
+import '../../auth/viewmodel/auth_viewmodel.dart';
 
 class ProfileView extends ConsumerStatefulWidget {
   const ProfileView({super.key});

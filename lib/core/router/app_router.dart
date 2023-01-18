@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../presentation/add_edit_item/add_edit_item_view.dart';
-import '../../presentation/auth/auth_view.dart';
-import '../../presentation/home/home_view.dart';
-import '../../presentation/profile/profile_view.dart';
+import '../../presentation/add_edit_item/view/add_edit_item_view.dart';
+import '../../presentation/auth/view/auth_view.dart';
+import '../../presentation/home/view/home_view.dart';
+import '../../presentation/profile/view/profile_view.dart';
 import '../services/cache_helper.dart';
 
 class AppRouterNames {

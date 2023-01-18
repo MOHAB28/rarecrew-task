@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/router/app_router.dart';
-import '../../core/widgets/custom_alert_dialog.dart';
-import 'home_viewmodel.dart';
-import 'model.dart';
+import '../../../core/router/app_router.dart';
+import '../../../core/widgets/custom_alert_dialog.dart';
+import '../viewmodel/home_viewmodel.dart';
+import '../model/model.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});

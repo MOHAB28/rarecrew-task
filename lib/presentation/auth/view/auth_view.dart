@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/errors/http_exception.dart';
-import '../../core/router/app_router.dart';
-import '../../core/styles/app_colors.dart';
-import '../../core/widgets/custom_alert_dialog.dart';
-import '../../core/widgets/custom_button_builder.dart';
-import '../../core/widgets/custom_question_text_button.dart';
-import '../../core/widgets/custom_text_builder.dart';
-import '../../core/widgets/custom_text_form_field.dart';
-import 'auth_viewmodel.dart';
+import '../../../core/errors/http_exception.dart';
+import '../../../core/router/app_router.dart';
+import '../../../core/styles/app_colors.dart';
+import '../../../core/widgets/custom_alert_dialog.dart';
+import '../../../core/widgets/custom_button_builder.dart';
+import '../../../core/widgets/custom_question_text_button.dart';
+import '../../../core/widgets/custom_text_builder.dart';
+import '../../../core/widgets/custom_text_form_field.dart';
+import '../viewmodel/auth_viewmodel.dart';
 
 class AuthView extends ConsumerStatefulWidget {
   const AuthView({

@@ -2,7 +2,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'model.dart';
+import '../model/model.dart';
 
 class HomeViewmodel with ChangeNotifier {
   final List<ItemModel> _items = [

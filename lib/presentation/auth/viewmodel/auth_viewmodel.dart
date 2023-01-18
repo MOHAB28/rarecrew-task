@@ -4,9 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
-import '../../core/errors/http_exception.dart';
-import '../../core/services/cache_helper.dart';
-import 'model.dart';
+import '../../../core/errors/http_exception.dart';
+import '../../../core/services/cache_helper.dart';
+import '../model/model.dart';
 
 class AuthViewmodel with ChangeNotifier {
   bool _isLoading = false;
