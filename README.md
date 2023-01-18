@@ -1,16 +1,13 @@
-# task
+# **Magdsoft Task**
 
-A new Flutter project.
+You can see a video [in this link](https://youtu.be/24zXqYlQ6FQ)
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+  Login screen                 |   Register screen        |  Home Screen | Add Item screen 
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/login_view.jpg?raw=true)|![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/register_view.jpg?raw=true)|![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/home_view.jpg?raw=true)|![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/add_item_view.jpg?raw=true)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  Edit Item screen                 |   Product Details screen       
+:-------------------------:|:-------------------------:
+![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/edit_item_view.jpg?raw=true)|![](https://github.com/MOHAB28/rarecrew-task/blob/master/screenshots/profile_view.jpg?raw=true)
