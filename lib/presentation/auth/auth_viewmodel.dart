@@ -53,7 +53,7 @@ class AuthViewmodel with ChangeNotifier {
       }
       _token = responseData['idToken'];
       _setLoader(false);
-      CacheHelper.saveDataSharedPreference(key: 'isLoggedIn', value: true);
+      CacheHelper.saveDataSharedPreference(key: 'token', value: _token);
     } catch (error) {
       rethrow;
     }

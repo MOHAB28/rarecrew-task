@@ -13,9 +13,9 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        var isLoggedIn =
-            CacheHelper.getDataFromSharedPreference(key: 'isLoggedIn');
-        if (isLoggedIn != null) {
+        var token =
+            CacheHelper.getDataFromSharedPreference(key: 'token');
+        if (token != null) {
           return MaterialPageRoute(builder: (_) => const LayoutScreen());
         } else {
           return MaterialPageRoute(builder: (_) => AuthScreen());
