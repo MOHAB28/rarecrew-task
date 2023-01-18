@@ -13,6 +13,7 @@ ThemeData appTheme() {
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ),
+      iconTheme: IconThemeData(color: AppColor.black)
     ),
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: const TextStyle(

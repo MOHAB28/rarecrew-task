@@ -5,26 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
 import '../../core/errors/http_exception.dart';
+import '../../core/services/cache_helper.dart';
 
 class AuthViewmodel with ChangeNotifier {
   bool _isLoading = false;
   bool _isLogin = true;
   String? _token;
-  DateTime? _expiryDate;
-  String? _userId;
 
-  bool get isAuth {
-    return token != null;
-  }
-
-  String? get token {
-    if (_expiryDate != null &&
-        _expiryDate!.isAfter(DateTime.now()) &&
-        _token != null) {
-      return _token;
-    }
-    return null;
-  }
 
   bool get isLoading => _isLoading;
   bool get isLogin => _isLogin;
@@ -33,6 +20,7 @@ class AuthViewmodel with ChangeNotifier {
     _isLogin = !_isLogin;
     notifyListeners();
   }
+
   void _setLoader(bool load) {
     _isLoading = load;
     notifyListeners();
@@ -64,15 +52,8 @@ class AuthViewmodel with ChangeNotifier {
         throw HttpException(message: responseData['error']['message']);
       }
       _token = responseData['idToken'];
-      _userId = responseData['localId'];
-      _expiryDate = DateTime.now().add(
-        Duration(
-          seconds: int.parse(
-            responseData['expiresIn'],
-          ),
-        ),
-      );
       _setLoader(false);
+      CacheHelper.saveDataSharedPreference(key: 'isLoggedIn', value: true);
     } catch (error) {
       rethrow;
     }
