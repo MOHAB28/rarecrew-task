@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/router/app_router.dart';
 import 'home_viewmodel.dart';
 import 'model.dart';
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key});
+class HomeView extends ConsumerWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,12 +15,12 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Home'),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, AppRouterNames.profileRouteName),
           icon: const Icon(Icons.person),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, AppRouterNames.addRouteName),
             icon: const Icon(Icons.add),
           ),
         ],

@@ -11,17 +11,17 @@ import '../../core/widgets/custom_text_builder.dart';
 import '../../core/widgets/custom_text_form_field.dart';
 import 'auth_viewmodel.dart';
 
-class AuthScreen extends ConsumerStatefulWidget {
-  const AuthScreen({
+class AuthView extends ConsumerStatefulWidget {
+  const AuthView({
     super.key,
   });
 
   /// The default form type to use.
   @override
-  ConsumerState<AuthScreen> createState() => _AuthScreenState();
+  ConsumerState<AuthView> createState() => _AuthScreenState();
 }
 
-class _AuthScreenState extends ConsumerState<AuthScreen> {
+class _AuthScreenState extends ConsumerState<AuthView> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
